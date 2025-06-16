@@ -11,5 +11,5 @@
 ## 资源
 
 - [原文链接](https://github.com/FreeRTOS/FreeRTOS-Kernel-Book/releases/download/V1.0/Mastering-the-FreeRTOS-Real-Time-Kernel.v1.0.pdf)
-- 中文版——先点击上面的PDF，然后在pdf界面点击下载图标下载原始文件。
+- 中文版——见Release
 - [FreeRTOS Kernel 对应代码](https://github.com/FreeRTOS/FreeRTOS-Kernel/archive/refs/tags/V10.4.0-kernel-only.zip)
