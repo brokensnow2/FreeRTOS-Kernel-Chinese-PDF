@@ -1,0 +1,48 @@
+name: 翻译错误 / 错字
+description: 报告漏翻、错译、错字、术语不一致等问题。
+title: "[翻译] "
+labels:
+  - "type: translation"
+  - "status: needs-info"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈。请尽量提供 PDF 页码、原文位置和建议译法，这会让维护者更快确认问题。
+  - type: input
+    id: page
+    attributes:
+      label: PDF 页码
+      description: 请填写中文 PDF 中显示问题的页码。
+      placeholder: 例如：第 97 页
+    validations:
+      required: true
+  - type: input
+    id: chapter
+    attributes:
+      label: 章节 / 小节
+      placeholder: 例如：5.3.3 xQueueReceive() API 函数
+  - type: textarea
+    id: current
+    attributes:
+      label: 当前中文内容
+      description: 粘贴有问题的中文句子或片段。
+    validations:
+      required: true
+  - type: textarea
+    id: original
+    attributes:
+      label: 英文原文
+      description: 有条件的话，请粘贴对应英文原文。
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: 建议修改
+      description: 可以写建议译文，也可以说明为什么当前翻译有问题。
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: 截图
+      description: 可拖入截图，尤其是涉及排版或上下文时。

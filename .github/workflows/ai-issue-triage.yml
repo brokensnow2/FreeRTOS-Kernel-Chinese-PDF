@@ -1,0 +1,99 @@
+name: AI issue triage
+
+on:
+  issues:
+    types:
+      - labeled
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: Issue number to triage
+        required: true
+
+permissions:
+  contents: read
+  issues: write
+  models: read
+
+jobs:
+  ai-assessment:
+    name: Add AI-assisted triage comment
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch' || github.event.label.name == 'request ai triage'
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+
+      - name: Resolve issue for manual dispatch
+        if: github.event_name == 'workflow_dispatch'
+        id: manual_issue
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
+        env:
+          ISSUE_NUMBER: ${{ inputs.issue_number }}
+        with:
+          result-encoding: string
+          script: |
+            const issueNumber = Number(process.env.ISSUE_NUMBER || 0);
+            if (!issueNumber) {
+              core.setFailed('workflow_dispatch requires issue_number.');
+              return '';
+            }
+            const {owner, repo} = context.repo;
+            const {data: issue} = await github.rest.issues.get({
+              owner,
+              repo,
+              issue_number: issueNumber,
+            });
+            return JSON.stringify({
+              number: issue.number,
+              body: issue.body || '',
+            });
+
+      - name: Add trigger label for manual dispatch
+        if: github.event_name == 'workflow_dispatch'
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
+        env:
+          ISSUE_NUMBER: ${{ fromJSON(steps.manual_issue.outputs.result).number }}
+        with:
+          script: |
+            const {owner, repo} = context.repo;
+            const issueNumber = Number(process.env.ISSUE_NUMBER);
+            await github.rest.issues.addLabels({
+              owner,
+              repo,
+              issue_number: issueNumber,
+              labels: ['request ai triage'],
+            });
+
+      - name: Run AI assessment on labeled issue
+        if: github.event_name == 'issues'
+        uses: github/ai-assessment-comment-labeler@a29876208a805048b198ff9e055100b1b23f9db4 # main
+        with:
+          token: ${{ github.token }}
+          issue_number: ${{ github.event.issue.number }}
+          issue_body: ${{ github.event.issue.body }}
+          repo_name: ${{ github.event.repository.name }}
+          owner: ${{ github.repository_owner }}
+          ai_review_label: request ai triage
+          prompts_directory: .github/prompts
+          labels_to_prompts_mapping: request ai triage,issue-triage.prompt.yml
+          model: openai/gpt-4o-mini
+          max_tokens: 600
+
+      - name: Run AI assessment on manually selected issue
+        if: github.event_name == 'workflow_dispatch'
+        uses: github/ai-assessment-comment-labeler@a29876208a805048b198ff9e055100b1b23f9db4 # main
+        with:
+          token: ${{ github.token }}
+          issue_number: ${{ fromJSON(steps.manual_issue.outputs.result).number }}
+          issue_body: ${{ fromJSON(steps.manual_issue.outputs.result).body }}
+          repo_name: ${{ github.event.repository.name }}
+          owner: ${{ github.repository_owner }}
+          ai_review_label: request ai triage
+          prompts_directory: .github/prompts
+          labels_to_prompts_mapping: request ai triage,issue-triage.prompt.yml
+          model: openai/gpt-4o-mini
+          max_tokens: 600

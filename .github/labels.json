@@ -1,0 +1,107 @@
+[
+  {
+    "name": "type: typo",
+    "color": "c2e0c6",
+    "description": "错字、标点、明显文字错误"
+  },
+  {
+    "name": "type: translation",
+    "color": "bfdadc",
+    "description": "翻译错误、漏翻、术语不一致"
+  },
+  {
+    "name": "type: layout",
+    "color": "fef2c0",
+    "description": "PDF 排版、图片、表格、代码清单显示问题"
+  },
+  {
+    "name": "type: bookmark",
+    "color": "d4c5f9",
+    "description": "目录、书签、页码跳转问题"
+  },
+  {
+    "name": "type: code-listing",
+    "color": "f9d0c4",
+    "description": "示例代码清单缺失、被翻译或格式损坏"
+  },
+  {
+    "name": "type: upstream-version",
+    "color": "fbca04",
+    "description": "上游英文版本同步、版本路线相关问题"
+  },
+  {
+    "name": "type: question",
+    "color": "d876e3",
+    "description": "使用、流程、项目计划类问题"
+  },
+  {
+    "name": "type: docs",
+    "color": "0075ca",
+    "description": "README、贡献说明、发布说明等文档问题"
+  },
+  {
+    "name": "status: needs-info",
+    "color": "ededed",
+    "description": "需要报告者补充页码、截图、原文位置或复现信息"
+  },
+  {
+    "name": "status: triaged",
+    "color": "0e8a16",
+    "description": "已完成初步分类"
+  },
+  {
+    "name": "status: ai-candidate",
+    "color": "5319e7",
+    "description": "范围明确、适合 AI 先尝试开 PR"
+  },
+  {
+    "name": "status: human-needed",
+    "color": "b60205",
+    "description": "需要维护者或真实贡献者判断/处理"
+  },
+  {
+    "name": "status: blocked",
+    "color": "000000",
+    "description": "暂时无法继续推进"
+  },
+  {
+    "name": "status: accepted",
+    "color": "0e8a16",
+    "description": "维护者已接受该问题或建议"
+  },
+  {
+    "name": "priority: high",
+    "color": "b60205",
+    "description": "高优先级"
+  },
+  {
+    "name": "priority: medium",
+    "color": "fbca04",
+    "description": "中优先级"
+  },
+  {
+    "name": "priority: low",
+    "color": "c5def5",
+    "description": "低优先级"
+  },
+  {
+    "name": "help wanted",
+    "color": "008672",
+    "description": "欢迎真实贡献者接手"
+  },
+  {
+    "name": "good first issue",
+    "color": "7057ff",
+    "description": "适合首次贡献者"
+  },
+  {
+    "name": "expert-needed",
+    "color": "b60205",
+    "description": "需要熟悉 FreeRTOS、PDF 排版或翻译校对的贡献者"
+  },
+  {
+    "name": "request ai triage",
+    "color": "5319e7",
+    "description": "手动请求 GitHub Models 生成维护辅助注释"
+  }
+]

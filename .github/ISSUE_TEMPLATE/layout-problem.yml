@@ -1,0 +1,44 @@
+name: 排版 / 图片 / 代码清单问题
+description: 报告图片缺失、代码清单损坏、表格难读、分页异常等问题。
+title: "[排版] "
+labels:
+  - "type: layout"
+  - "status: needs-info"
+body:
+  - type: input
+    id: page
+    attributes:
+      label: PDF 页码
+      placeholder: 例如：第 197 页
+    validations:
+      required: true
+  - type: dropdown
+    id: problem_type
+    attributes:
+      label: 问题类型
+      options:
+        - 图片缺失或位置错误
+        - 代码清单格式损坏
+        - 表格格式损坏
+        - 正文排版异常
+        - 页眉/页脚/目录/书签问题
+        - 其他
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: 问题描述
+      description: 请说明看到的问题，以及它影响阅读的方式。
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望效果
+      description: 可以参考英文原版截图或描述希望如何排版。
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: 截图
+      description: 强烈建议拖入截图。

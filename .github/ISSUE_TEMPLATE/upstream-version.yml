@@ -1,0 +1,24 @@
+name: 上游版本 / 项目路线建议
+description: 讨论英文原版更新、翻译路线、维护策略等需要维护者判断的问题。
+title: "[版本/路线] "
+labels:
+  - "type: upstream-version"
+  - "status: human-needed"
+body:
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 建议或问题
+      description: 请说明你希望讨论的版本、范围或项目路线。
+    validations:
+      required: true
+  - type: input
+    id: upstream
+    attributes:
+      label: 上游链接
+      placeholder: 例如：https://github.com/FreeRTOS/FreeRTOS-Kernel-Book/releases
+  - type: textarea
+    id: context
+    attributes:
+      label: 背景信息
+      description: 可以补充为什么这个变更重要，以及可能影响哪些文件或发布版本。

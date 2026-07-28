@@ -1,0 +1,14 @@
+name: 问题 / 咨询
+description: 询问仓库内容、翻译流程、使用方式等。
+title: "[问题] "
+labels:
+  - "type: question"
+  - "status: human-needed"
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: 你的问题
+      description: 请尽量说明背景，方便维护者理解。
+    validations:
+      required: true

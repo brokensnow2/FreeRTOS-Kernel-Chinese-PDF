@@ -1,0 +1,30 @@
+name: 目录 / 书签问题
+description: 报告 PDF 目录、书签、页码跳转或章节标题问题。
+title: "[书签] "
+labels:
+  - "type: bookmark"
+  - "status: needs-info"
+body:
+  - type: input
+    id: bookmark
+    attributes:
+      label: 有问题的书签 / 目录项
+      placeholder: 例如：10.3.1.1 API 函数完整列表
+    validations:
+      required: true
+  - type: input
+    id: target
+    attributes:
+      label: 当前跳转页码
+      placeholder: 例如：点击后跳到第 266 页
+  - type: input
+    id: expected
+    attributes:
+      label: 期望跳转页码或标题
+      placeholder: 例如：应跳到第 267 页；标题应为 ...
+  - type: textarea
+    id: detail
+    attributes:
+      label: 详细说明
+    validations:
+      required: true
