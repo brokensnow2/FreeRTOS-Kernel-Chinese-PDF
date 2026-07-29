@@ -1,20 +1,55 @@
-<div class="book-cover">
+<div align="center">
 
-<img src="media/freeRTOS.png" alt="FreeRTOS" class="book-cover__logo">
+</br>
+</br>
 
-<p class="book-cover__kicker">社区维护中文译本</p>
+<img src="media/freeRTOS.png" alt="" height="180" width="250"/>
 
-<p class="book-cover__title">掌握 FreeRTOS 实时内核</p>
 
-<p class="book-cover__subtitle">实践教程指南</p>
+# 精通 FreeRTOS™[^1][^2] 实时内核
 
-<p class="book-cover__authors">Richard Barry 与 FreeRTOS 团队</p>
+## 动手实践教程指南 ##
 
-<div class="book-cover__edition">
-  <span>英文原书 V1.1.0</span>
-  <span>第 1 章验证版</span>
+### Richard Barry 与 FreeRTOS 团队 ###
+
+**发布版本 - 1.0**
+
+
+</br>
+</br>
+
 </div>
 
-<p class="book-cover__project">FreeRTOS Kernel Chinese PDF</p>
+
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+
+
+
+<div align = "left">
+  
+[^1]: FreeRTOS™、FreeRTOS.org™ 及 FreeRTOS 标志均为 Amazon Web Services 的商标。
+[^2]: OPEN**RTOS**<sup>®</sup> 和 SAFE**RTOS**<sup>®</sup> 是 WITTENSTEIN High Integrity Systems Ltd. 的注册商标。所有其他品牌或产品名称均为其各自所有者的财产。
 
 </div>

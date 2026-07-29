@@ -1,18 +1,30 @@
 {
   "schemaVersion": 1,
   "title": "《Mastering the FreeRTOS Real Time Kernel》中文译本",
-  "shortTitle": "掌握 FreeRTOS 实时内核",
+  "shortTitle": "精通 FreeRTOS™ 实时内核",
   "language": "zh-CN",
   "source": {
     "tag": "V1.1.0",
     "commit": "f3e284bbdd1e1489c9d59c3cea477ae58855a0c9"
   },
-  "edition": "第 1 章验证版",
+  "edition": "总体验证版",
   "files": [
     "zh-CN/booktitle.md",
     "zh-CN/copyright.md",
     "zh-CN/toc.md",
-    "zh-CN/ch01.md"
+    "zh-CN/ch01.md",
+    "zh-CN/ch02.md",
+    "zh-CN/ch03.md",
+    "zh-CN/ch04.md",
+    "zh-CN/ch05.md",
+    "zh-CN/ch06.md",
+    "zh-CN/ch07.md",
+    "zh-CN/ch08.md",
+    "zh-CN/ch09.md",
+    "zh-CN/ch10.md",
+    "zh-CN/ch11.md",
+    "zh-CN/ch12.md",
+    "zh-CN/ch13.md"
   ],
   "chapters": [
     {
@@ -20,7 +32,79 @@
       "source": "upstream/ch01.md",
       "translation": "zh-CN/ch01.md",
       "status": "translated"
+    },
+    {
+      "number": 2,
+      "source": "upstream/ch02.md",
+      "translation": "zh-CN/ch02.md",
+      "status": "translated"
+    },
+    {
+      "number": 3,
+      "source": "upstream/ch03.md",
+      "translation": "zh-CN/ch03.md",
+      "status": "translated"
+    },
+    {
+      "number": 4,
+      "source": "upstream/ch04.md",
+      "translation": "zh-CN/ch04.md",
+      "status": "translated"
+    },
+    {
+      "number": 5,
+      "source": "upstream/ch05.md",
+      "translation": "zh-CN/ch05.md",
+      "status": "translated"
+    },
+    {
+      "number": 6,
+      "source": "upstream/ch06.md",
+      "translation": "zh-CN/ch06.md",
+      "status": "translated"
+    },
+    {
+      "number": 7,
+      "source": "upstream/ch07.md",
+      "translation": "zh-CN/ch07.md",
+      "status": "translated"
+    },
+    {
+      "number": 8,
+      "source": "upstream/ch08.md",
+      "translation": "zh-CN/ch08.md",
+      "status": "translated"
+    },
+    {
+      "number": 9,
+      "source": "upstream/ch09.md",
+      "translation": "zh-CN/ch09.md",
+      "status": "translated"
+    },
+    {
+      "number": 10,
+      "source": "upstream/ch10.md",
+      "translation": "zh-CN/ch10.md",
+      "status": "translated"
+    },
+    {
+      "number": 11,
+      "source": "upstream/ch11.md",
+      "translation": "zh-CN/ch11.md",
+      "status": "translated"
+    },
+    {
+      "number": 12,
+      "source": "upstream/ch12.md",
+      "translation": "zh-CN/ch12.md",
+      "status": "translated"
+    },
+    {
+      "number": 13,
+      "source": "upstream/ch13.md",
+      "translation": "zh-CN/ch13.md",
+      "status": "translated"
     }
   ],
-  "output": "output/pdf/Mastering-the-FreeRTOS-Real-Time-Kernel.V1.1.0.zh-CN.chapter-01-preview.pdf"
+  "output": "output/pdf/Mastering-the-FreeRTOS-Real-Time-Kernel.V1.1.0.zh-CN.preview.pdf"
 }
