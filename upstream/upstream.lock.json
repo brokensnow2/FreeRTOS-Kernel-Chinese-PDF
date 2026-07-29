@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "repository": "https://github.com/FreeRTOS/FreeRTOS-Kernel-Book",
+  "tag": "V1.1.0",
+  "commit": "f3e284bbdd1e1489c9d59c3cea477ae58855a0c9",
+  "license": "CC-BY-SA-4.0",
+  "included": [
+    "*.md",
+    "media/**",
+    "LICENSE",
+    "LICENSE-SAMPLECODE",
+    "LICENSE-SUMMARY"
+  ],
+  "notes": "Read-only snapshot used as the translation and build baseline."
+}

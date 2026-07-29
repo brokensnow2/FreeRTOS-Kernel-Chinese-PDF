@@ -1,0 +1,387 @@
+:root {
+  color: #202124;
+  font-family:
+    "Noto Serif CJK SC",
+    "Source Han Serif SC",
+    "Songti SC",
+    SimSun,
+    serif;
+  font-size: 10.8pt;
+  line-height: 1.78;
+}
+
+@page {
+  size: A4;
+  margin: 19mm 19mm 21mm 22mm;
+
+  @bottom-center {
+    color: #777b80;
+    content: counter(page);
+    font-family:
+      "Noto Sans CJK SC",
+      "Source Han Sans SC",
+      "Microsoft YaHei",
+      sans-serif;
+    font-size: 8pt;
+  }
+}
+
+@page cover {
+  margin: 0;
+
+  @bottom-center {
+    content: none;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #202124;
+  background: #ffffff;
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+}
+
+.book-part {
+  break-before: page;
+}
+
+.part-booktitle {
+  page: cover;
+  break-before: auto;
+  break-after: page;
+}
+
+.book-cover {
+  position: relative;
+  display: flex;
+  width: 210mm;
+  height: 297mm;
+  padding: 33mm 24mm 26mm;
+  flex-direction: column;
+  align-items: center;
+  color: #171717;
+  background:
+    linear-gradient(90deg, #c91f37 0 7mm, #ffffff 7mm 100%);
+  text-align: center;
+}
+
+.book-cover::after {
+  position: absolute;
+  right: 24mm;
+  bottom: 21mm;
+  left: 31mm;
+  height: 1px;
+  background: #b5b8bd;
+  content: "";
+}
+
+.book-cover__logo {
+  width: 62mm;
+  height: auto;
+  margin: 5mm 0 22mm;
+}
+
+.book-cover__kicker {
+  margin: 0 0 8mm;
+  color: #aa1730;
+  font-family:
+    "Noto Sans CJK SC",
+    "Source Han Sans SC",
+    "Microsoft YaHei",
+    sans-serif;
+  font-size: 11pt;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.book-cover__title {
+  max-width: 150mm;
+  margin: 0;
+  font-family:
+    "Noto Sans CJK SC",
+    "Source Han Sans SC",
+    "Microsoft YaHei",
+    sans-serif;
+  font-size: 31pt;
+  font-weight: 750;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+
+.book-cover__subtitle {
+  margin: 8mm 0 0;
+  color: #4b4e53;
+  font-size: 16pt;
+}
+
+.book-cover__authors {
+  margin: 21mm 0 0;
+  color: #34363a;
+  font-size: 12pt;
+}
+
+.book-cover__edition {
+  display: grid;
+  width: 92mm;
+  margin-top: 16mm;
+  border-top: 1px solid #c7c9cd;
+  border-bottom: 1px solid #c7c9cd;
+  grid-template-columns: 1fr;
+  color: #46494e;
+  font-family:
+    "Noto Sans CJK SC",
+    "Source Han Sans SC",
+    "Microsoft YaHei",
+    sans-serif;
+  font-size: 10pt;
+  line-height: 2;
+}
+
+.book-cover__project {
+  margin-top: auto;
+  color: #666a70;
+  font-family: "Cascadia Mono", Consolas, monospace;
+  font-size: 9pt;
+}
+
+.copyright-page {
+  min-height: 240mm;
+  padding-top: 14mm;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  break-after: avoid-page;
+  color: #161719;
+  font-family:
+    "Noto Sans CJK SC",
+    "Source Han Sans SC",
+    "Microsoft YaHei",
+    sans-serif;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.4;
+}
+
+h1 {
+  margin: 0 0 13mm;
+  padding-bottom: 5mm;
+  border-bottom: 1.4mm solid #c91f37;
+  font-size: 25pt;
+}
+
+h2 {
+  margin: 11mm 0 5mm;
+  color: #22252a;
+  font-size: 17pt;
+}
+
+h3 {
+  margin: 8mm 0 3.5mm;
+  color: #33363b;
+  font-size: 13.5pt;
+}
+
+h4 {
+  margin: 6mm 0 3mm;
+  font-size: 11.5pt;
+}
+
+p {
+  margin: 0 0 4.4mm;
+  orphans: 3;
+  text-align: justify;
+  widows: 3;
+}
+
+a {
+  color: #8d1730;
+  text-decoration-thickness: 0.5px;
+  text-underline-offset: 1.5px;
+}
+
+ul,
+ol {
+  margin: 2mm 0 5mm;
+  padding-left: 7mm;
+}
+
+li {
+  margin: 1.2mm 0;
+  padding-left: 1mm;
+}
+
+li::marker {
+  color: #a71932;
+}
+
+.part-toc ul {
+  margin: 1mm 0 2mm;
+}
+
+.toc-chapter {
+  margin: 0 0 3mm;
+  font-family:
+    "Noto Sans CJK SC",
+    "Source Han Sans SC",
+    "Microsoft YaHei",
+    sans-serif;
+  font-size: 14pt;
+  font-weight: 700;
+  text-align: left;
+}
+
+.part-toc li {
+  margin: 1mm 0;
+}
+
+.part-toc a {
+  color: #25272b;
+  text-decoration: none;
+}
+
+code {
+  font-family:
+    "Cascadia Mono",
+    "Noto Sans Mono CJK SC",
+    Consolas,
+    monospace;
+  font-size: 0.9em;
+}
+
+:not(pre) > code {
+  padding: 0.15em 0.3em;
+  border: 1px solid #d9dce0;
+  background: #f5f6f7;
+  color: #83152b;
+}
+
+pre {
+  margin: 4mm 0 5mm;
+  padding: 4mm;
+  border: 1px solid #cfd3d8;
+  border-left: 1.2mm solid #455a64;
+  break-inside: avoid-page;
+  background: #f7f8f9;
+  color: #172027;
+  font-family:
+    "Cascadia Mono",
+    "Noto Sans Mono CJK SC",
+    Consolas,
+    monospace;
+  font-size: 8.5pt;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+table {
+  width: 100%;
+  margin: 4mm 0 6mm;
+  border-collapse: collapse;
+  break-inside: avoid-page;
+  font-size: 9.5pt;
+}
+
+thead {
+  display: table-header-group;
+}
+
+th,
+td {
+  padding: 2.2mm 2.5mm;
+  border: 1px solid #b9bec4;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: #e9ecef;
+  color: #202327;
+  font-family:
+    "Noto Sans CJK SC",
+    "Source Han Sans SC",
+    "Microsoft YaHei",
+    sans-serif;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  max-height: 220mm;
+  margin: 5mm auto;
+  break-inside: avoid-page;
+  object-fit: contain;
+}
+
+blockquote {
+  margin: 5mm 0;
+  padding: 2mm 0 2mm 5mm;
+  border-left: 1mm solid #c91f37;
+  color: #4a4d52;
+}
+
+hr {
+  margin: 7mm 0;
+  border: 0;
+  border-top: 1px solid #c7cbd0;
+}
+
+strong {
+  font-weight: 700;
+}
+
+.footnotes {
+  margin-top: 9mm;
+  padding-top: 3mm;
+  border-top: 1px solid #bfc3c8;
+  color: #484b50;
+  font-size: 8.8pt;
+}
+
+.footnotes hr {
+  display: none;
+}
+
+.footnotes ol {
+  margin-bottom: 0;
+}
+
+.footnotes li {
+  break-inside: avoid-page;
+}
+
+.footnotes p {
+  margin-bottom: 2mm;
+  text-align: left;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+[data-footnote-ref],
+[data-footnote-backref] {
+  text-decoration: none;
+}

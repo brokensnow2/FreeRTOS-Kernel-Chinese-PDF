@@ -1,0 +1,8 @@
+node_modules/
+tmp/
+output/pdf/*.pdf
+output/pdf/*.html
+!output/pdf/.gitkeep
+playwright-report/
+test-results/
+*.log

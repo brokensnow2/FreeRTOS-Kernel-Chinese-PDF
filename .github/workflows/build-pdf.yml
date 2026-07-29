@@ -1,0 +1,77 @@
+name: Build translated PDF
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - ".github/workflows/build-pdf.yml"
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - "scripts/**"
+      - "styles/**"
+      - "upstream/**"
+      - "zh-CN/**"
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/build-pdf.yml"
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - "scripts/**"
+      - "styles/**"
+      - "upstream/**"
+      - "zh-CN/**"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: build-pdf-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  chapter-01-preview:
+    name: Chapter 1 preview
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.9.0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Install Chromium and CJK fonts
+        run: |
+          pnpm exec playwright install --with-deps chromium
+          sudo apt-get update
+          sudo apt-get install --yes fonts-noto-cjk
+
+      - name: Verify translated sources
+        run: pnpm run verify
+
+      - name: Build PDF
+        run: pnpm run build:chapter1
+
+      - name: Verify PDF
+        run: pnpm run verify:pdf
+
+      - name: Upload PDF preview
+        uses: actions/upload-artifact@v4
+        with:
+          name: freertos-kernel-book-v1.1.0-zh-cn-chapter-01
+          path: output/pdf/*.pdf
+          if-no-files-found: error
+          retention-days: 14

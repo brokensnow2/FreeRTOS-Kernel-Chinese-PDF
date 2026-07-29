@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "title": "《Mastering the FreeRTOS Real Time Kernel》中文译本",
+  "shortTitle": "掌握 FreeRTOS 实时内核",
+  "language": "zh-CN",
+  "source": {
+    "tag": "V1.1.0",
+    "commit": "f3e284bbdd1e1489c9d59c3cea477ae58855a0c9"
+  },
+  "edition": "第 1 章验证版",
+  "files": [
+    "zh-CN/booktitle.md",
+    "zh-CN/copyright.md",
+    "zh-CN/toc.md",
+    "zh-CN/ch01.md"
+  ],
+  "chapters": [
+    {
+      "number": 1,
+      "source": "upstream/ch01.md",
+      "translation": "zh-CN/ch01.md",
+      "status": "translated"
+    }
+  ],
+  "output": "output/pdf/Mastering-the-FreeRTOS-Real-Time-Kernel.V1.1.0.zh-CN.chapter-01-preview.pdf"
+}
