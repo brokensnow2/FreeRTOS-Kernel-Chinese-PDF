@@ -92,6 +92,23 @@ export function countFenceLines(markdown) {
     .filter((line) => /^\s*(```|~~~)/.test(line)).length;
 }
 
+export function extractCodeBlocks(markdown) {
+  const parser = createMarkdownParser();
+  const tokens = parser.lexer(markdown);
+  const blocks = [];
+
+  parser.walkTokens(tokens, (token) => {
+    if (token.type === "code") {
+      blocks.push({
+        language: token.lang ?? "",
+        text: token.text
+      });
+    }
+  });
+
+  return blocks;
+}
+
 export function extractExternalUrls(markdown) {
   return [
     ...new Set(
@@ -176,6 +193,30 @@ export function validateBook() {
 
     if (countFenceLines(source) !== countFenceLines(translation)) {
       errors.push(`${chapter.translation}: fenced code block markers do not match the source.`);
+    }
+
+    const sourceCodeBlocks = extractCodeBlocks(source);
+    const translationCodeBlocks = extractCodeBlocks(translation);
+    const codeBlockCount = Math.min(sourceCodeBlocks.length, translationCodeBlocks.length);
+
+    if (sourceCodeBlocks.length !== translationCodeBlocks.length) {
+      errors.push(
+        `${chapter.translation}: code block count ${translationCodeBlocks.length} does not match source count ${sourceCodeBlocks.length}.`
+      );
+    }
+
+    for (let index = 0; index < codeBlockCount; index += 1) {
+      const sourceBlock = sourceCodeBlocks[index];
+      const translationBlock = translationCodeBlocks[index];
+
+      if (
+        sourceBlock.language !== translationBlock.language ||
+        sourceBlock.text !== translationBlock.text
+      ) {
+        errors.push(
+          `${chapter.translation}: code block ${index + 1} must match the source exactly, including its language, comments, and whitespace.`
+        );
+      }
     }
 
     const sourceImages = extractImageReferences(source);

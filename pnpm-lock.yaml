@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      highlight.js:
+        specifier: 11.11.1
+        version: 11.11.1
       marked:
         specifier: 17.0.5
         version: 17.0.5
@@ -33,6 +36,10 @@ packages:
     resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
+
+  highlight.js@11.11.1:
+    resolution: {integrity: sha512-Xwwo44whKBVCYoliBQwaPvtd/2tYFkRQtXDWj1nackaV2JPXx3L0+Jvd8/qCJ2p+ML0/XVkJ2q+Mr+UVdpJK5w==}
+    engines: {node: '>=12.0.0'}
 
   marked-footnote@1.4.0:
     resolution: {integrity: sha512-fZTxAhI1TcLEs5UOjCfYfTHpyKGaWQevbxaGTEA68B51l7i87SctPFtHETYqPkEN0ka5opvy4Dy1l/yXVC+hmg==}
@@ -75,6 +82,8 @@ snapshots:
 
   fsevents@2.3.2:
     optional: true
+
+  highlight.js@11.11.1: {}
 
   marked-footnote@1.4.0(marked@17.0.5):
     dependencies:

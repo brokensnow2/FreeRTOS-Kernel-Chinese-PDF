@@ -6,16 +6,17 @@
   "packageManager": "pnpm@11.9.0",
   "description": "Source-driven Chinese translation and PDF build for the FreeRTOS Kernel Book.",
   "scripts": {
-    "verify": "node scripts/verify-book.mjs",
+    "verify": "node scripts/verify-book.mjs && node scripts/verify-highlighting.mjs",
     "build": "node scripts/build-book.mjs",
     "build:chapter1": "node scripts/build-book.mjs",
     "verify:pdf": "node scripts/verify-pdf.mjs",
-    "preview": "node scripts/verify-book.mjs && node scripts/build-book.mjs && node scripts/verify-pdf.mjs"
+    "preview": "node scripts/verify-book.mjs && node scripts/verify-highlighting.mjs && node scripts/build-book.mjs && node scripts/verify-pdf.mjs"
   },
   "engines": {
     "node": ">=20"
   },
   "dependencies": {
+    "highlight.js": "11.11.1",
     "marked": "17.0.5",
     "marked-footnote": "1.4.0",
     "pdf-lib": "1.17.1",

@@ -289,6 +289,53 @@ pre {
   white-space: pre-wrap;
 }
 
+pre .hljs-comment,
+pre .hljs-quote {
+  color: #5c6d63;
+  font-style: italic;
+}
+
+pre .hljs-keyword,
+pre .hljs-selector-tag,
+pre .hljs-section {
+  color: #7b1e3a;
+  font-weight: 650;
+}
+
+pre .hljs-type,
+pre .hljs-built_in,
+pre .hljs-title.class_ {
+  color: #1f5f6b;
+}
+
+pre .hljs-title,
+pre .hljs-function .hljs-title {
+  color: #174f73;
+}
+
+pre .hljs-string,
+pre .hljs-regexp,
+pre .hljs-symbol {
+  color: #6d4d18;
+}
+
+pre .hljs-number,
+pre .hljs-literal {
+  color: #315d83;
+}
+
+pre .hljs-meta,
+pre .hljs-meta .hljs-keyword {
+  color: #744c16;
+}
+
+pre .hljs-params,
+pre .hljs-variable,
+pre .hljs-operator,
+pre .hljs-punctuation {
+  color: #263238;
+}
+
 table {
   width: 100%;
   margin: 4mm 0 6mm;
