@@ -4,6 +4,7 @@ import { fileURLToPath } from "node:url";
 import { createMarkdownParser } from "./markdown.mjs";
 
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
+const commentTranslatableLanguages = new Set(["c", "c++", "cpp", "cxx", "h", "hpp"]);
 
 export const repoRoot = path.resolve(scriptDirectory, "..");
 
@@ -109,6 +110,95 @@ export function extractCodeBlocks(markdown) {
   return blocks;
 }
 
+export function normalizeCodeForComparison(text, language) {
+  const codeLanguage = String(language).trim().split(/\s+/, 1)[0].toLowerCase();
+
+  if (!commentTranslatableLanguages.has(codeLanguage)) {
+    return text;
+  }
+
+  return maskCStyleCommentBodies(text);
+}
+
+function maskCStyleCommentBodies(source) {
+  let normalized = "";
+  let index = 0;
+
+  while (index < source.length) {
+    const character = source[index];
+    const nextCharacter = source[index + 1];
+    const rawString = readCppRawString(source, index);
+
+    if (rawString) {
+      normalized += rawString;
+      index += rawString.length;
+    } else if (character === '"' || character === "'") {
+      const quote = character;
+      normalized += character;
+      index += 1;
+
+      while (index < source.length) {
+        const literalCharacter = source[index];
+        normalized += literalCharacter;
+        index += 1;
+
+        if (literalCharacter === "\\" && index < source.length) {
+          normalized += source[index];
+          index += 1;
+        } else if (literalCharacter === quote) {
+          break;
+        }
+      }
+    } else if (character === "/" && nextCharacter === "/") {
+      normalized += "//<comment>";
+      index += 2;
+
+      while (index < source.length && source[index] !== "\r" && source[index] !== "\n") {
+        index += 1;
+      }
+    } else if (character === "/" && nextCharacter === "*") {
+      normalized += "/*<comment>";
+      index += 2;
+
+      while (
+        index < source.length &&
+        !(source[index] === "*" && source[index + 1] === "/")
+      ) {
+        index += 1;
+      }
+
+      if (index < source.length) {
+        normalized += "*/";
+        index += 2;
+      }
+    } else {
+      normalized += character;
+      index += 1;
+    }
+  }
+
+  return normalized;
+}
+
+function readCppRawString(source, index) {
+  if (index > 0 && /[\w]/.test(source[index - 1])) {
+    return null;
+  }
+
+  const opening = /^(?:u8|u|U|L)?R"([^\s()\\]{0,16})\(/.exec(source.slice(index));
+  if (!opening) {
+    return null;
+  }
+
+  const closing = `)${opening[1]}"`;
+  const closingIndex = source.indexOf(closing, index + opening[0].length);
+  if (closingIndex === -1) {
+    return source.slice(index);
+  }
+
+  return source.slice(index, closingIndex + closing.length);
+}
+
 export function extractExternalUrls(markdown) {
   return [
     ...new Set(
@@ -209,12 +299,16 @@ export function validateBook() {
       const sourceBlock = sourceCodeBlocks[index];
       const translationBlock = translationCodeBlocks[index];
 
-      if (
-        sourceBlock.language !== translationBlock.language ||
-        sourceBlock.text !== translationBlock.text
+      if (sourceBlock.language !== translationBlock.language) {
+        errors.push(
+          `${chapter.translation}: code block ${index + 1} language must match the source exactly.`
+        );
+      } else if (
+        normalizeCodeForComparison(sourceBlock.text, sourceBlock.language) !==
+        normalizeCodeForComparison(translationBlock.text, translationBlock.language)
       ) {
         errors.push(
-          `${chapter.translation}: code block ${index + 1} must match the source exactly, including its language, comments, and whitespace.`
+          `${chapter.translation}: code block ${index + 1} executable content and comment structure must match the source; only C/C++ comment text may be translated.`
         );
       }
     }

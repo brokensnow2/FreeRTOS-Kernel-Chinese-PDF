@@ -225,6 +225,10 @@ li {
   padding-left: 1mm;
 }
 
+li > p {
+  text-align: left;
+}
+
 li::marker {
   color: #a71932;
 }

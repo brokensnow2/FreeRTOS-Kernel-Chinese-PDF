@@ -7,7 +7,7 @@
 - 当前稳定中文 PDF 仍对应 FreeRTOS Kernel Book V1.0。
 - `upstream/` 固定保存官方 FreeRTOS Kernel Book V1.1.0 快照。
 - `zh-CN/` 保存与上游章节同名的中文 Markdown。
-- 当前仅完成并启用第 1 章，用于验证翻译、协作、排版和自动构建流程。
+- 当前已完成并启用第 1 至 2 章，用于验证翻译、协作、排版和自动构建流程。
 - 完成全部章节并通过人工审阅前，不会用验证版替换当前稳定 PDF。
 
 ## 目录结构
@@ -28,7 +28,7 @@
 3. 保留英文源文件中的章节编号、代码块、图片引用、表格和 HTML 锚点。
 4. 每个中文标题前保留由英文标题生成的稳定锚点，避免目录链接随译文调整而变化。
 5. 一个 Pull Request 尽量只处理一个章节或一种明确的问题。
-6. API 名称、标识符和示例代码保持英文，正文术语按项目约定统一。
+6. API 名称、标识符和可执行代码保持英文；C/C++ 代码中的解释性注释可以翻译，正文术语按项目约定统一。
 
 `pnpm run verify` 会检查：
 
@@ -55,7 +55,7 @@ pnpm run preview
 生成文件：
 
 ```text
-output/pdf/Mastering-the-FreeRTOS-Real-Time-Kernel.V1.1.0.zh-CN.chapter-01-preview.pdf
+output/pdf/Mastering-the-FreeRTOS-Real-Time-Kernel.V1.1.0.zh-CN.chapters-01-02-preview.pdf
 ```
 
 在 Windows 上，如果 Playwright 没有安装 Chromium，构建脚本会尝试使用本机 Microsoft Edge 或 Google Chrome。也可以通过 `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` 指定浏览器。
@@ -66,7 +66,7 @@ output/pdf/Mastering-the-FreeRTOS-Real-Time-Kernel.V1.1.0.zh-CN.chapter-01-previ
 
 1. 校验中英文源文件结构。
 2. 安装 Chromium 和 Noto CJK 字体。
-3. 构建第 1 章预览 PDF。
+3. 构建当前已翻译章节的预览 PDF。
 4. 检查 PDF 页数、文件头和文件大小。
 5. 将 PDF 作为 Actions Artifact 保留 14 天，供维护者下载审阅。
 

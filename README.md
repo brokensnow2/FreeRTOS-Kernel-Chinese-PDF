@@ -20,7 +20,7 @@
 | --- | --- | --- |
 | 当前中文译本 | FreeRTOS Kernel Book V1.0 | PDF 封面标注为 Version 1.0 |
 | 对照英文原版 | FreeRTOS Kernel Book V1.0 | 当前翻译所依据的英文版本 |
-| 源码化验证版 | FreeRTOS Kernel Book V1.1.0 | 已完成第 1 章，尚未替换稳定 PDF |
+| 源码化验证版 | FreeRTOS Kernel Book V1.1.0 | 已完成第 1 至 2 章，尚未替换稳定 PDF |
 | 上游最新书籍 | FreeRTOS Kernel Book V1.1.0 | 已固定 Markdown 和媒体快照 |
 | FreeRTOS Kernel 源码 | 独立版本体系 | V10.x、V11.x 等内核版本不等同于书籍版本 |
 
@@ -35,9 +35,9 @@ PDF 文件名中的 `V1.0` 指 FreeRTOS Kernel Book 的书籍版本，不代表 
 - [`upstream/`](./upstream/) 固定保存官方 V1.1.0 Markdown、媒体和许可文件，对应提交 `f3e284bbdd1e1489c9d59c3cea477ae58855a0c9`。
 - [`zh-CN/`](./zh-CN/) 保存与英文上游同结构的中文 Markdown。
 - PDF 由 Node.js、Playwright 和统一样式自动生成，不再作为人工编辑的源文件。
-- 当前已完成第 1 章全文翻译和构建验证；全部章节完成并审阅前，V1.0 仍是稳定下载版本。
+- 当前已完成第 1 至 2 章全文翻译和构建验证；全部章节完成并审阅前，V1.0 仍是稳定下载版本。
 
-运行 `pnpm run preview` 会依次检查章节结构、生成 PDF 并验证产物，在 `output/pdf/` 得到第 1 章验证版。Windows 用户也可以直接运行 `build-pdf.cmd`。相关 Pull Request 会通过 GitHub Actions 提供可下载的预览 PDF。
+运行 `pnpm run preview` 会依次检查章节结构、生成 PDF 并验证产物，在 `output/pdf/` 得到第 1 至 2 章验证版。Windows 用户也可以直接运行 `build-pdf.cmd`。相关 Pull Request 会通过 GitHub Actions 提供可下载的预览 PDF。
 
 详细说明见 [源码化翻译与 PDF 构建流程](./docs/source-workflow.md)。
 
