@@ -184,3 +184,23 @@
   - [7.7.2 从 ISR 使用队列时的注意事项](ch07.md#772-considerations-when-using-a-queue-from-an-isr)
 - [7.8 中断嵌套](ch07.md#78-interrupt-nesting)
   - [7.8.1 ARM Cortex-M 和 ARM GIC 用户注意事项](ch07.md#781-a-note-to-arm-cortex-m22-and-arm-gic-users)
+
+<p class="toc-chapter"><a href="ch08.md#8-resource-management">8 资源管理</a></p>
+
+- [8.1 本章简介与范围](ch08.md#81-chapter-introduction-and-scope)
+  - [8.1.1 互斥](ch08.md#811-mutual-exclusion)
+  - [8.1.2 范围](ch08.md#812-scope)
+- [8.2 临界区与挂起调度器](ch08.md#82-critical-sections-and-suspending-the-scheduler)
+  - [8.2.1 基本临界区](ch08.md#821-basic-critical-sections)
+  - [8.2.2 挂起（或锁定）调度器](ch08.md#822-suspending-or-locking-the-scheduler)
+  - [8.2.3 vTaskSuspendAll() API 函数](ch08.md#823-the-vtasksuspendall-api-function)
+  - [8.2.4 xTaskResumeAll() API 函数](ch08.md#824-the-xtaskresumeall-api-function)
+- [8.3 互斥量（与二值信号量）](ch08.md#83-mutexes-and-binary-semaphores)
+  - [8.3.1 xSemaphoreCreateMutex() API 函数](ch08.md#831-the-xsemaphorecreatemutex-api-function)
+  - [8.3.2 优先级反转](ch08.md#832-priority-inversion)
+  - [8.3.3 优先级继承](ch08.md#833-priority-inheritance)
+  - [8.3.4 死锁（或称致命拥抱）](ch08.md#834-deadlock-or-deadly-embrace)
+  - [8.3.5 递归互斥量](ch08.md#835-recursive-mutexes)
+  - [8.3.6 互斥量与任务调度](ch08.md#836-mutexes-and-task-scheduling)
+- [8.4 门卫任务](ch08.md#84-gatekeeper-tasks)
+  - [8.4.1 重写 vPrintString() 以使用门卫任务](ch08.md#841-re-writing-vprintstring-to-use-a-gatekeeper-task)
