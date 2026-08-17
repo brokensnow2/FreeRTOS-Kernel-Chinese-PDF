@@ -244,3 +244,16 @@
   - [10.3.7 在外设驱动程序中使用任务通知：UART 示例](ch10.md#1037-task-notifications-used-in-peripheral-device-drivers-uart-example)
   - [10.3.8 在外设驱动程序中使用任务通知：ADC 示例](ch10.md#1038-task-notifications-used-in-peripheral-device-drivers-adc-example)
   - [10.3.9 在应用程序中直接使用任务通知](ch10.md#1039-task-notifications-used-directly-within-an-application)
+
+<p class="toc-chapter"><a href="ch11.md#11-low-power-support">11 低功耗支持</a></p>
+
+- [11.1 节能简介](ch11.md#111-power-saving-introduction)
+- [11.2 FreeRTOS 睡眠模式](ch11.md#112-freertos-sleep-modes)
+- [11.3 启用内置无 Tick 空闲功能及相关函数](ch11.md#113-functions-and-enabling-built-in-tickless-idle-functionality)
+  - [11.3.1 portSUPPRESS_TICKS_AND_SLEEP() 宏](ch11.md#1131-the-portsuppressticksandsleep-macro)
+  - [11.3.2 vPortSuppressTicksAndSleep 函数](ch11.md#1132-the-vportsuppressticksandsleep-function)
+  - [11.3.3 eTaskConfirmSleepModeStatus 函数](ch11.md#1133-the-etaskconfirmsleepmodestatus-function)
+  - [11.3.4 configPRE_SLEEP_PROCESSING 配置项](ch11.md#1134-the-configpresleepprocessing-configuration)
+  - [11.3.5 configPOST_SLEEP_PROCESSING 配置项](ch11.md#1135-the-configpostsleepprocessing-configuration)
+- [11.4 实现 portSUPPRESS_TICKS_AND_SLEEP() 宏](ch11.md#114-implementing-portsuppressticksandsleep-macro)
+- [11.5 空闲任务钩子函数](ch11.md#115-idle-task-hook-function)
