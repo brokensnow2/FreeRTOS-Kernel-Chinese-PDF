@@ -204,3 +204,21 @@
   - [8.3.6 互斥量与任务调度](ch08.md#836-mutexes-and-task-scheduling)
 - [8.4 门卫任务](ch08.md#84-gatekeeper-tasks)
   - [8.4.1 重写 vPrintString() 以使用门卫任务](ch08.md#841-re-writing-vprintstring-to-use-a-gatekeeper-task)
+
+<p class="toc-chapter"><a href="ch09.md#9-event-groups">9 事件组</a></p>
+
+- [9.1 本章简介与范围](ch09.md#91-chapter-introduction-and-scope)
+  - [9.1.1 范围](ch09.md#911-scope)
+- [9.2 事件组的特性](ch09.md#92-characteristics-of-an-event-group)
+  - [9.2.1 事件组、事件标志和事件位](ch09.md#921-event-groups-event-flags-and-event-bits)
+  - [9.2.2 深入了解 EventBits_t 数据类型](ch09.md#922-more-about-the-eventbitst-data-type)
+  - [9.2.3 多任务访问](ch09.md#923-access-by-multiple-tasks)
+  - [9.2.4 使用事件组的实际示例](ch09.md#924-a-practical-example-of-using-an-event-group)
+- [9.3 使用事件组管理事件](ch09.md#93-event-management-using-event-groups)
+  - [9.3.1 xEventGroupCreate() API 函数](ch09.md#931-the-xeventgroupcreate-api-function)
+  - [9.3.2 xEventGroupSetBits() API 函数](ch09.md#932-the-xeventgroupsetbits-api-function)
+  - [9.3.3 xEventGroupSetBitsFromISR() API 函数](ch09.md#933-the-xeventgroupsetbitsfromisr-api-function)
+  - [9.3.4 xEventGroupWaitBits() API 函数](ch09.md#934-the-xeventgroupwaitbits-api-function)
+  - [9.3.5 xEventGroupGetStaticBuffer() API 函数](ch09.md#935-the-xeventgroupgetstaticbuffer-api-function)
+- [9.4 使用事件组同步任务](ch09.md#94-task-synchronization-using-an-event-group)
+  - [9.4.1 xEventGroupSync() API 函数](ch09.md#941-the-xeventgroupsync-api-function)
