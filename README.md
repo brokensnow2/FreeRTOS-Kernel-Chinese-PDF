@@ -3,14 +3,14 @@
 这是 FreeRTOS 官方教程《Mastering the FreeRTOS Real Time Kernel》的中文译本，旨在为中文读者提供更便于阅读和检索的 PDF 版本。
 
 <p align="center">
-  <img src="docs/assets/cover-v1.0-zh.png" width="360" alt="《Mastering the FreeRTOS Real Time Kernel》中文译本封面">
+  <img src="docs/assets/cover-v1.1-zh.png" width="360" alt="《Mastering the FreeRTOS Real Time Kernel》V1.1.0 中文译本封面">
 </p>
 
 ## 下载
 
-- [在线查看或下载中文 PDF](./Mastering-the-FreeRTOS-Real-Time-Kernel.v1.0_中文译本.pdf)
+- [在线查看或下载中文 PDF](./Mastering-the-FreeRTOS-Real-Time-Kernel.V1.1.0.zh-CN.pdf)
 - [查看历史发布版本](https://github.com/brokensnow2/FreeRTOS-Kernel-Chinese-PDF/releases)
-- [下载对应的英文原版 V1.0](https://github.com/FreeRTOS/FreeRTOS-Kernel-Book/releases/download/V1.0/Mastering-the-FreeRTOS-Real-Time-Kernel.v1.0.pdf)
+- [下载对应的英文原版 V1.1.0](https://github.com/FreeRTOS/FreeRTOS-Kernel-Book/releases/tag/V1.1.0)
 
 ## 版本说明
 
@@ -18,12 +18,12 @@
 
 | 项目 | 版本 | 说明 |
 | --- | --- | --- |
-| 当前中文译本 | FreeRTOS Kernel Book V1.0 | PDF 封面标注为 Version 1.0 |
-| 对照英文原版 | FreeRTOS Kernel Book V1.0 | 当前翻译所依据的英文版本 |
-| 上游最新书籍 | FreeRTOS Kernel Book V1.1.0 | 当前中文译本尚未完整同步 |
+| 当前中文译本 | FreeRTOS Kernel Book V1.1.0 | 已完成第 1 至 13 章翻译与构建验证 |
+| 对照英文原版 | FreeRTOS Kernel Book V1.1.0 | 固定于官方提交 `f3e284bbdd1e1489c9d59c3cea477ae58855a0c9` |
+| 上游书籍版本 | FreeRTOS Kernel Book V1.1.0 | Markdown、图片和许可文件均来自官方仓库 |
 | FreeRTOS Kernel 源码 | 独立版本体系 | V10.x、V11.x 等内核版本不等同于书籍版本 |
 
-PDF 文件名中的 `V1.0` 指 FreeRTOS Kernel Book 的书籍版本，不代表 FreeRTOS Kernel 源码版本。当前中文译本不应被视为官方 V1.1.0 的完整翻译。
+PDF 文件名中的 `V1.1.0` 指 FreeRTOS Kernel Book 的书籍版本，不代表 FreeRTOS Kernel 源码版本。
 
 上游 V1.1.0 主要修订了优先级继承说明、任务通知内存占用以及少量代码清单和格式问题。版本差异可查看 [V1.0...V1.1.0 官方对比](https://github.com/FreeRTOS/FreeRTOS-Kernel-Book/compare/V1.0...V1.1.0)。
 
