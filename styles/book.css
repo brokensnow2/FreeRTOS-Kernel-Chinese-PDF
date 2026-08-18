@@ -408,6 +408,7 @@ strong {
   font-size: 8.8pt;
 }
 
+hr[data-footnotes],
 .footnotes hr {
   display: none;
 }
@@ -423,6 +424,10 @@ strong {
 .footnotes p {
   margin-bottom: 2mm;
   text-align: left;
+}
+
+.footnotes li:last-child > p:last-child {
+  margin-bottom: 0;
 }
 
 .sr-only {

@@ -7,7 +7,7 @@
     "tag": "V1.1.0",
     "commit": "f3e284bbdd1e1489c9d59c3cea477ae58855a0c9"
   },
-  "edition": "第 1 至 12 章验证版",
+  "edition": "第 1 至 13 章验证版",
   "files": [
     "zh-CN/booktitle.md",
     "zh-CN/copyright.md",
@@ -23,7 +23,8 @@
     "zh-CN/ch09.md",
     "zh-CN/ch10.md",
     "zh-CN/ch11.md",
-    "zh-CN/ch12.md"
+    "zh-CN/ch12.md",
+    "zh-CN/ch13.md"
   ],
   "chapters": [
     {
@@ -97,7 +98,13 @@
       "source": "upstream/ch12.md",
       "translation": "zh-CN/ch12.md",
       "status": "translated"
+    },
+    {
+      "number": 13,
+      "source": "upstream/ch13.md",
+      "translation": "zh-CN/ch13.md",
+      "status": "translated"
     }
   ],
-  "output": "output/pdf/Mastering-the-FreeRTOS-Real-Time-Kernel.V1.1.0.zh-CN.chapters-01-02-03-04-05-06-07-08-09-10-11-12-preview.pdf"
+  "output": "output/pdf/Mastering-the-FreeRTOS-Real-Time-Kernel.V1.1.0.zh-CN.chapters-01-02-03-04-05-06-07-08-09-10-11-12-13-preview.pdf"
 }
