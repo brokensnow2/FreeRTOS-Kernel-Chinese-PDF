@@ -3,14 +3,14 @@
 这是 FreeRTOS 官方教程《Mastering the FreeRTOS Real Time Kernel》的中文译本，旨在为中文读者提供更便于阅读和检索的 PDF 版本。
 
 <p align="center">
-  <img src="docs/assets/cover-v1.0-zh.png" width="360" alt="《Mastering the FreeRTOS Real Time Kernel》中文译本封面">
+  <img src="docs/assets/cover-v1.1-zh.png" width="360" alt="《Mastering the FreeRTOS Real Time Kernel》V1.1.0 中文译本封面">
 </p>
 
 ## 下载
 
-- [在线查看或下载中文 PDF](./Mastering-the-FreeRTOS-Real-Time-Kernel.v1.0_中文译本.pdf)
+- [在线查看或下载中文 PDF](https://github.com/brokensnow2/FreeRTOS-Kernel-Chinese-PDF/blob/main/Mastering-the-FreeRTOS-Real-Time-Kernel.V1.1.0.zh-CN.pdf)
 - [查看历史发布版本](https://github.com/brokensnow2/FreeRTOS-Kernel-Chinese-PDF/releases)
-- [下载对应的英文原版 V1.0](https://github.com/FreeRTOS/FreeRTOS-Kernel-Book/releases/download/V1.0/Mastering-the-FreeRTOS-Real-Time-Kernel.v1.0.pdf)
+- [下载对应的英文原版 V1.1.0](https://github.com/FreeRTOS/FreeRTOS-Kernel-Book/releases/tag/V1.1.0)
 
 ## 版本说明
 
@@ -18,26 +18,25 @@
 
 | 项目 | 版本 | 说明 |
 | --- | --- | --- |
-| 当前中文译本 | FreeRTOS Kernel Book V1.0 | PDF 封面标注为 Version 1.0 |
-| 对照英文原版 | FreeRTOS Kernel Book V1.0 | 当前翻译所依据的英文版本 |
-| 源码化验证版 | FreeRTOS Kernel Book V1.1.0 | 已完成第 1 至 2 章，尚未替换稳定 PDF |
-| 上游最新书籍 | FreeRTOS Kernel Book V1.1.0 | 已固定 Markdown 和媒体快照 |
+| 当前中文译本 | FreeRTOS Kernel Book V1.1.0 | 已完成第 1 至 13 章翻译与构建验证 |
+| 对照英文原版 | FreeRTOS Kernel Book V1.1.0 | 固定于官方提交 `f3e284bbdd1e1489c9d59c3cea477ae58855a0c9` |
+| 上游书籍版本 | FreeRTOS Kernel Book V1.1.0 | Markdown、图片和许可文件均来自官方仓库 |
 | FreeRTOS Kernel 源码 | 独立版本体系 | V10.x、V11.x 等内核版本不等同于书籍版本 |
 
-PDF 文件名中的 `V1.0` 指 FreeRTOS Kernel Book 的书籍版本，不代表 FreeRTOS Kernel 源码版本。当前中文译本不应被视为官方 V1.1.0 的完整翻译。
+PDF 文件名中的 `V1.1.0` 指 FreeRTOS Kernel Book 的书籍版本，不代表 FreeRTOS Kernel 源码版本。
 
 上游 V1.1.0 主要修订了优先级继承说明、任务通知内存占用以及少量代码清单和格式问题。版本差异可查看 [V1.0...V1.1.0 官方对比](https://github.com/FreeRTOS/FreeRTOS-Kernel-Book/compare/V1.0...V1.1.0)。
 
 ## 源文件与自动构建
 
-本仓库正在迁移到更适合多人协作的源码化维护方式：
+本仓库采用便于多人协作的源码化维护方式：
 
 - [`upstream/`](./upstream/) 固定保存官方 V1.1.0 Markdown、媒体和许可文件，对应提交 `f3e284bbdd1e1489c9d59c3cea477ae58855a0c9`。
 - [`zh-CN/`](./zh-CN/) 保存与英文上游同结构的中文 Markdown。
 - PDF 由 Node.js、Playwright 和统一样式自动生成，不再作为人工编辑的源文件。
-- 当前已完成第 1 至 2 章全文翻译和构建验证；全部章节完成并审阅前，V1.0 仍是稳定下载版本。
+- 当前已完成第 1 至 13 章全文翻译和构建验证；`main` 分支维护稳定 PDF，源码修改在 `test/source-driven-pdf` 分支进行。
 
-运行 `pnpm run preview` 会依次检查章节结构、生成 PDF 并验证产物，在 `output/pdf/` 得到第 1 至 2 章验证版。Windows 用户也可以直接运行 `build-pdf.cmd`。相关 Pull Request 会通过 GitHub Actions 提供可下载的预览 PDF。
+运行 `pnpm run preview` 会依次检查章节结构、代码保真、语法高亮和 PDF 完整性，并在 `output/pdf/` 生成完整 V1.1.0 中文译本。Windows 用户也可以直接运行 `build-pdf.cmd`。相关 Pull Request 会通过 GitHub Actions 提供可下载的预览 PDF。
 
 详细说明见 [源码化翻译与 PDF 构建流程](./docs/source-workflow.md)。
 

@@ -12,7 +12,6 @@
 
 <div class="book-cover__edition">
   <span>英文原书 V1.1.0</span>
-  <span>第 1 至 2 章验证版</span>
 </div>
 
 <p class="book-cover__project">FreeRTOS Kernel Chinese PDF</p>
