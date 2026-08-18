@@ -379,6 +379,10 @@ img {
   object-fit: contain;
 }
 
+p:has(> img) {
+  break-inside: avoid-page;
+}
+
 blockquote {
   margin: 5mm 0;
   padding: 2mm 0 2mm 5mm;
